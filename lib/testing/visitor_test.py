@@ -30,7 +30,7 @@ class TestVisitor:
     #     with pytest.raises(Exception):
     #         coffee.name = 'Banana'
 
-    def test_has_many__trips(self):
+    def test_has_many_trips(self):
         '''Visitor has many Trips.'''
         p1 = NationalPark("Yosemmette")
         vis = Visitor("Bill")
@@ -57,11 +57,10 @@ class TestVisitor:
     def test_has_many_parks(self):
         '''Visitor has many parks.'''
         vis = Visitor("Flat White")
-
         p1 = NationalPark('Alaska Wilds')
         p2 = NationalPark('Bryce Canyon')
-        t_1 = Trip(vis, p1, 2)
-        t_2 = Trip(vis, p2, 5)
+        t_1 = Trip(vis, p1, "May 5th", "May 9th")
+        t_2 = Trip(vis, p2, "May 20th","May 27th")
 
         assert (vis in p1.visitors())
         assert (vis in p2.visitors())
